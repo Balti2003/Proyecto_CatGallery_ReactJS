@@ -35,6 +35,9 @@ export function useCats({ initialLimit = 9 } = {}) {
     }, [fetchCats, page, initialLimit]);
 
     const reload = useCallback(async ({ limit = initialLimit, mime_types, breed_ids } = {}) => {
+        // Cuando recargamos (ej. por cambio de filtro), restablecemos la página y los gatos.
+        setPage(0);
+        setCats([]); //Limpiamos la galeria de gatos
         await fetchCats({ limit, pageToFetch: 0, mime_types, breed_ids });
     }, [fetchCats, initialLimit]);
 

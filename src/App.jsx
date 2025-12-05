@@ -13,6 +13,7 @@ function App() {
   const [view, setView] = useState("gallery");
   const [favorites, setFavorites] = useLocalStorage("cat_favorites", []);
   const [modalCat, setModalCat] = useState(null);
+  const [selectedBreedId, setSelectedBreedId] = useState(""); //id de raza seleccionada
 
   //Chequeamos rapido si un cat.id esta en favoritos, usamos un mapa
   const favoritesMap = useMemo(() => {
@@ -43,6 +44,8 @@ function App() {
             favoritesMap={favoritesMap}
             onToggleFavorite={handleToggleFavorite}
             onOpenModal={(cat) => setModalCat(cat)}
+            selectedBreedId = {selectedBreedId}
+            onSelectBreed = {setSelectedBreedId}
           />
         ) : (
           <Favorites

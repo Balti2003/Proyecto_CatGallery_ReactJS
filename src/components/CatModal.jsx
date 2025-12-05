@@ -11,7 +11,7 @@ const CatModal = ({ cat, onClose }) => {
                     <button onClick={onClose} className="px-3 py-1">Cerrar</button>
                 </div>
                 <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <img src={cat.url} alt="cat" className="w-full h-72 object-cover rounded" />
+                    <img src={cat.url} alt="cat" className="w-full h-72 object-cover rounded" loading="lazy" />
                     <div>
                         <h3 className="text-xl font-bold mb-2">{breed ? breed.name : 'Gato'}</h3>
                         {breed && (
