@@ -1,16 +1,62 @@
-# React + Vite
+# 🐱 CatGallery – React App  
+Aplicación web creada con **React** que permite explorar imágenes de gatos obtenidas desde **TheCatAPI**, mostrando información extendida de sus razas en un modal elegante y responsivo, ademas permite elegir favoritos.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 🚀 Características principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✔️ Obtención de imágenes desde **TheCatAPI**  
+- ✔️ Visualización en **grilla responsiva**  
+- ✔️ Modal con información ampliada del gato seleccionado
+- ✔️ Seccion y boton de favoritos
+- ✔️ Diseño moderno utilizando **TailwindCSS**  
+- ✔️ Código modular y fácil de mantener  
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tecnologías utilizadas
 
-## Expanding the ESLint configuration
+- **React + Vite**
+- **TailwindCSS**
+- **JavaScript (ES6+)**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📦 Instalación y ejecución
+
+Sigue estos pasos para clonar y correr el proyecto localmente:
+
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/tu-usuario/tu-repo.git
+
+# 2. Entrar al proyecto
+cd tu-repo
+
+# 3. Instalar dependencias
+npm install
+
+# 4. Ejecutar el servidor de desarrollo
+npm run dev
+```
+
+---
+
+## Estructura del proyecto
+
+```bash
+src/
+│── components/
+│     ├── CatCard.jsx
+│     ├── CatModal.jsx
+      ├── ...
+│── hooks/
+│     ├── UseCats.js
+      ├── UseLocalStorage.js
+      ├── ...
+│── App.jsx
+│── main.jsx
+│── api.js
+├── ...
+```
+
