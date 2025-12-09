@@ -14,5 +14,6 @@ export const getCatsUrl = ({limit = 9, page = 0, mime_types, breed_ids} = {}) =>
         params.set("breed_ids", breed_ids);
     }
     params.set("include_breeds", "1");
+    params.set("has_breeds", "1");
     return `${BASE_URL}/images/search?${params.toString()}`;
 };

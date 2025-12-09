@@ -11,7 +11,7 @@ import LoadMoreButton from "./LoadMoreButton";
 const CatGallery = ({ favoritesMap, onToggleFavorite, onOpenModal }) => {
     const { cats, loading, error, loadMore, fetchCats, hasMore } = useCats({ initialLimit: 9 });
     const [initialLoaded, setInitialLoaded] = useState(false);
-    
+
     useEffect(() => {
         //cargar la primera pagina al montar el componente
         fetchCats({ limit: 9,pageToFetch: 0 });
@@ -19,28 +19,28 @@ const CatGallery = ({ favoritesMap, onToggleFavorite, onOpenModal }) => {
         setInitialLoaded(true);
     }, [fetchCats]);
     
-    return (
-        <section className="max-w-5xl mx-auto px-4 py-6">
-            <ErrorMessage message={error} />
-            {!initialLoaded || loading ? <Loader /> : null}
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                {cats.map(cat => (
-                    <CatCard
-                        key={cat.id}
-                        cat={cat}
-                        isFavorite={!!favoritesMap[cat.id]}
-                        onToggleFavorite={() => onToggleFavorite(cat)}
-                        onOpenModal={onOpenModal}
-                    />
-                ))}
-            </div>
-
-            {!loading && hasMore ? (
-                <LoadMoreButton onClick={() => loadMore({ limit: 9 })} />
-            ) : null}
-        </section>
-    );
+return ( 
+    <section className="max-w-5xl mx-auto px-4 py-6"> 
+        <ErrorMessage message={error} /> 
+        {!initialLoaded || loading ? <Loader /> : null} 
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"> 
+            {cats.map(cat => ( 
+                <CatCard 
+                    key={cat.id} 
+                    cat={cat} 
+                    isFavorite={!!favoritesMap[cat.id]} 
+                    onToggleFavorite={() => onToggleFavorite(cat)} 
+                    onOpenModal={onOpenModal} 
+                /> 
+            ))} 
+        </div> 
+        
+        {!loading && hasMore ? ( 
+            <LoadMoreButton onClick={() => loadMore({ limit: 9 })} /> 
+        ) : null}
+        
+    </section> );
 }
  
 export default CatGallery;
